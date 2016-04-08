@@ -11,6 +11,7 @@ public class Main {
   public static void main(String[] args)
   {
     Spiewak s1 = new Spiewak("Carrey"){
+        String song = "Aaa Bbb Ccc";
       /*<-  kod */
     };
 

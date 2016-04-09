@@ -9,17 +9,20 @@ package zad1;
 
 public abstract class Spiewak {
     static Integer sp_index = 0;
-    private Integer my_num;
     private String name;
     private String song;
+    public int numer = 0;
 
     public Spiewak(String name) {
         this.name = name;
-        my_num += 1;
-        this.sp_index = my_num;
+        this.numer = ++sp_index;
     }
 
     static public String najglosniej(Spiewak[] sp) {
         return "Not Implemented";
+    }
+    
+    public String toString(){
+		return "(" + numer + ") " + name + ": " + song;
     }
 }

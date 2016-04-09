@@ -16,10 +16,25 @@ public abstract class Spiewak {
         this.name = name;
         this.numer = ++sp_index;
     }
+    
     abstract String spiewaj();
 
     static public String najglosniej(Spiewak[] sp) {
-        return "Not Implemented";
+    	
+    	for (Spiewak s : sp) {int count = 0; 
+    		String spiew = s.spiewaj(); 
+    		for (int i = 0; i < spiew.length(); i++){
+    			if(spiew.charAt(i) >= 'A' && spiew.charAt(i) <= 'Z'){
+    				count++;
+    			} 
+    			int ptr = count; 
+    			if(count < ptr) 
+    		
+    		
+    		} //System.out.println(count);	
+    		
+    	}
+		return null;
     }
     
     public String toString(){

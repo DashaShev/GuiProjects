@@ -22,15 +22,17 @@ public class ArrayTest {
 		 
 		 for (int i = 0; i < tab.length; i++){
 			 for (int j = 0; j <tab[i].length; j++){
-				 if (tab.length == tab[i].length) {
-					 if ((i == j && tab[i][j] != 0) && (i != j && tab[i][j] == 0)){
-						 return true;
-					 
-					 }
-				 }
+                if (i == j) {
+                    if (tab[i][j] == 0) {
+                        return false;
+                    }
+                } else {
+                    if (tab[i][j] != 0) {
+                        return false;
+                    }
+                }
 			 }
 		 }
-		 
-		return false;
-    
+		 return true;
+    }    
 }

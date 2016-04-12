@@ -13,5 +13,24 @@ public class ArrayTest {
             }
             System.out.println();
         }
+        
+        System.out.println(isDiagonal(tablica));
     }
+    
+    
+    public static boolean isDiagonal(int tab[][]){
+		 
+		 for (int i = 0; i < tab.length; i++){
+			 for (int j = 0; j <tab[i].length; j++){
+				 if (tab.length == tab[i].length) {
+					 if ((i == j && tab[i][j] != 0) && (i != j && tab[i][j] == 0)){
+						 return true;
+					 
+					 }
+				 }
+			 }
+		 }
+		 
+		return false;
+    
 }

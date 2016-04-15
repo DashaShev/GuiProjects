@@ -1,24 +1,28 @@
 package zad2;
 
 public class ReversibleDouble implements Reversible {
-	private double cyfra;
+	private float cyfra, orig;
 	private int count = 0;
 
 	public ReversibleDouble(double i) {
-		this.cyfra = i; 
+		 this.cyfra = new Float(i); 
+		 this.orig = new Float(i);
 	}
 
 	@Override
-	public double reverse() {
-		if (count == 0){ 
-			return (1/cyfra); 
+	public Float reverse() {
+		if (count == 0){
 			count++;
+			cyfra = 1/cyfra;
+		    return (1/cyfra);
 		}
-		if (count == 1){
-			return (10 + cyfra); 
-		}
+		cyfra = 10 + orig;
+		return (10 + cyfra);
+	}
 
+	public String toString(){
+		return Float.toString(cyfra);
+		
 	}
 
 }
-

@@ -29,14 +29,15 @@ public class ReverseTest {
           r.reverse();
         }
 
-        System.out.println("Odwrócone:");
+        System.out.println("OdwrГіcone:");
         for (Reversible r : revers) {
           System.out.println(r);
         }
 
-        System.out.println("Przywrócone i zmienione:");
+        System.out.println("PrzywrГіcone i zmienione:");
         for (Reversible r : revers) {
-           /*<-  co tu trzeba napisać */
+        	r.reverse();
+        	System.out.println(r);
         }
       }
     }

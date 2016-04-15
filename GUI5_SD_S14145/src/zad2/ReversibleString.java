@@ -10,16 +10,20 @@ public class ReversibleString implements Reversible {
 
 	@Override
 	public String reverse() {
-		if (count == 0) {
-	        String newString = new StringBuffer(slowo).reverse().toString();
-			return newString;
+		if (count == 0){
 			count++; 
+	        String newString = new StringBuffer(slowo).reverse().toString();
+	        slowo = newString; 
+			return newString;
 		}
-		if (count == 1){
-			return "Tekst " + slowo; 
-		}
+		slowo =  "Tekst " + new StringBuffer(slowo).reverse().toString();
+		return "Tekst " + slowo;
 	
 		
+	}
+	
+	public String toString(){
+		return slowo; 
 	}
 
 }

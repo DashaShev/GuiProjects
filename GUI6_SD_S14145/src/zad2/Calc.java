@@ -11,22 +11,24 @@ public class Calc {
 
 	 private String op_sym;
 	 private MathOp[] op_code;
+	 
 	 public Calc() {
 	   this.op_sym = "+-*/";
 	   this.op_code = new MathOp[] {
 	      new OpAdd(),
 	      new OpSub(),
 	      new OpMul(),
-	      new OpDiv() }
+	      new OpDiv() 
+	   };
+	 }
 	
-	public String doCalc(String string) {
+	public String doCalc(String stroka) {
 		
-		String[] tab = string.split(" ");
+		String[] tab = stroka.split(" ");
 		for (int i = 0; i < 3; i++){
 			System.out.println(tab[i]);
 		}
 		return null;
 	}
 	
-}  
- 
+} 

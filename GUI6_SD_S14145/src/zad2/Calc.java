@@ -9,9 +9,15 @@ package zad2;
 
 public class Calc {
 
-	public Calc(){
-		
-	}
+	 private String op_sym;
+	 private MathOp[] op_code;
+	 public Calc() {
+	   this.op_sym = "+-*/";
+	   this.op_code = new MathOp[] {
+	      new OpAdd(),
+	      new OpSub(),
+	      new OpMul(),
+	      new OpDiv() }
 	
 	public String doCalc(String string) {
 		
@@ -21,4 +27,6 @@ public class Calc {
 		}
 		return null;
 	}
+	
 }  
+ 

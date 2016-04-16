@@ -29,7 +29,8 @@ public class Calc {
 			for (int i = 0; i < 3; i++){
 				System.out.println(tab[i]);
 			}
-		} catch (ArrayIndexOutOfBoundsException  e){ return "Invalid command to calc" ;
+		} catch (ArrayIndexOutOfBoundsException  e){ 
+			return "Invalid command to calc" ;
 		}
 		
 	  

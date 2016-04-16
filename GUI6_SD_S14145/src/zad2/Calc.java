@@ -15,6 +15,10 @@ public class Calc {
 	
 	public String doCalc(String string) {
 		
+		String[] tab = string.split(" ");
+		for (int i = 0; i < 3; i++){
+			System.out.println(tab[i]);
+		}
 		return null;
 	}
 }  

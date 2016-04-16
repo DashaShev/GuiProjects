@@ -24,16 +24,16 @@ public class Calc {
 	
 	public String doCalc(String cmd) {
 		
+		
 		try {
 			String[] tab = cmd.trim().split("\\s++");
 			for (int i = 0; i < 3; i++){
 				System.out.println(tab[i]);
 			}
-		} catch (ArrayIndexOutOfBoundsException  e){ 
-			return "Invalid command to calc" ;
+		} catch (ArrayIndexOutOfBoundsException  e){ return "Invalid command to calc" ;
 		}
-		
+		op_sym.indexOf(tab[1]);
 	  
 	}
 	
-}  
+} 

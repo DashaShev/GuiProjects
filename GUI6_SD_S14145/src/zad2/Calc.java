@@ -28,14 +28,10 @@ public class Calc {
 		
 		try {
 			tab = cmd.trim().split("\\s++");
-			for (int i = 0; i < 3; i++){
-				System.out.println(tab[i]);
-			}
 		} catch (ArrayIndexOutOfBoundsException  e){ return "Invalid command to calc" ;
 		}
 		
-		System.out.println(op_code[op_sym.indexOf(tab[1])].op(1f, 2f));
-	  return op_code[op_sym.indexOf(tab[1])].op(1f, 2f).toString(); 
+	  return  op_code[op_sym.indexOf(tab[1])].op(1f, 3f).toString(); 
 	}
 	
-}  
+}

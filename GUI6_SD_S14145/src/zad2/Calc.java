@@ -27,13 +27,15 @@ public class Calc {
 		try {
 			String[] tab = cmd.trim().split("\\s++");
 			for (int i = 0; i < 3; i++){
-				System.out.println(tab[i]);
+			    System.out.println(String.format("%d: %s", i, tab[i]));
 			}
+            int pos = this.op_sym.indexOf(tab[1]);
+            System.out.println(String.format("pos is %d", pos));
 		} catch (ArrayIndexOutOfBoundsException  e){ 
 			return "Invalid command to calc" ;
 		}
 		
-	  
+        return "";	  
 	}
 	
-}  
+}

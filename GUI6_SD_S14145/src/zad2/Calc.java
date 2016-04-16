@@ -22,13 +22,13 @@ public class Calc {
 	   };
 	 }
 	
-	public String doCalc(String stroka) {
+	public String doCalc(String cmd) {
 		
-		String[] tab = stroka.split(" ");
+		String[] tab = cmd.split("\\s+");
 		for (int i = 0; i < 3; i++){
 			System.out.println(tab[i]);
 		}
 		return null;
 	}
 	
-} 
+}  

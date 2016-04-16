@@ -34,8 +34,8 @@ public class Calc {
 		} catch (ArrayIndexOutOfBoundsException  e){ return "Invalid command to calc" ;
 		}
 		
-		System.out.println(op_code[op_sym.indexOf(tab[1])]);
-	  return op_code[op_sym.indexOf(tab[1])].toString(); 
+		System.out.println(op_code[op_sym.indexOf(tab[1])].op(1f, 2f));
+	  return op_code[op_sym.indexOf(tab[1])].op(1f, 2f).toString(); 
 	}
 	
 }  

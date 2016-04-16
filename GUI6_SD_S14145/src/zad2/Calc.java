@@ -24,7 +24,7 @@ public class Calc {
 	
 	public String doCalc(String cmd) {
 		
-		String[] tab = cmd.split("\\s+");
+		String[] tab = cmd.trim().split("\\s++");
 		for (int i = 0; i < 3; i++){
 			System.out.println(tab[i]);
 		}

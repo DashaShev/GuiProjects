@@ -4,7 +4,7 @@ public class Letters implements Runnable {
 
 	private String letters;
 	private char tab[];
-	private Thread  thr_list [] = new Thread [tab.length];
+	private Thread  thr_list [];
 	
 	public Letters (String letters){
 		this.letters = letters; 

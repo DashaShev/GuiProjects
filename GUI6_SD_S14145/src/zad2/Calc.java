@@ -24,7 +24,10 @@ public class Calc {
 	
 	public String doCalc(String cmd) {
 		
+		String[]tab;
+		
 		try {
+<<<<<<< HEAD
 			String[] tab = cmd.trim().split("\\s++");
 			for (int i = 0; i < 3; i++){
 			    System.out.println(String.format("%d: %s", i, tab[i]));
@@ -36,6 +39,13 @@ public class Calc {
 		}
 		
         return "";	  
+=======
+			tab = cmd.trim().split("\\s++");
+		} catch (ArrayIndexOutOfBoundsException  e){ return "Invalid command to calc" ;
+		}
+		
+	  return  op_code[op_sym.indexOf(tab[1])].op(1f, 3f).toString(); 
+>>>>>>> bb2a3bbb555e27e8be37d6f5a8aabed783f549c3
 	}
 	
 }

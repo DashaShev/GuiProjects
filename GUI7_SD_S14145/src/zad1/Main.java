@@ -20,6 +20,7 @@ public class Main {
     Thread.sleep(5000);
 
     for (Thread t : letters.getThreads()) {
+    	t.interrupt();
     	t.join();
     }
     

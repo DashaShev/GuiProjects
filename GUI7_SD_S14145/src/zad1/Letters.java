@@ -6,27 +6,44 @@ public class Letters implements Runnable {
 	private char tab[];
 	private Thread thr_list [];
 	
-	public Letters (String letters){
+	public Letters (String letters) {
 		this.letters = letters; 
 		this.thr_list = new Thread [letters.length()];
 		this.tab = new char [letters.length()];
 		for (int i = 0; i < letters.length(); i++){
   		  tab[i] = letters.charAt(i);
-  		  thr_list[i] = new Thread(); 
+  		  
+  		Runnable r1 = new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                	String threadName =
+                            Thread.currentThread().getName().substring(7);
+                  System.out.print(threadName);
+                  try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+                }
+              }
+            };
+            thr_list[i] = new Thread(r1);
+  		  
   		  thr_list[i].setName("Thread " + tab[i]);
   	}
 		
 	}
 
-	      @Override
-	      public void run() {
-	   
-	    	  
-	      }
-
 		public Thread[] getThreads() {
 			
 			return thr_list;
+		}
+
+		@Override
+		 public void run() {
+			
+			
 		}
 
 }

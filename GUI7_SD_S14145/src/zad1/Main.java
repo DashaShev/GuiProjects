@@ -19,9 +19,10 @@ public class Main {
 
     Thread.sleep(5000);
 
-    /*<- tu trzeba zapisaД‡
-       fragment, ktГіry koЕ„czy dziaЕ‚anie kodГіw, wypisujД…cych litery 
-    */
+    for (Thread t : letters.getThreads()) {
+    	t.join();
+    }
+    
     System.out.println("\nProgram skoЕ„czyЕ‚ dziaЕ‚anie");
   }
 

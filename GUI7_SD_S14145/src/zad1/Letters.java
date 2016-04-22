@@ -10,17 +10,21 @@ public class Letters implements Runnable {
 
 	      @Override
 	      public void run() {
-	       
-	    	  for (int i = 0; i < letters.length(); i++){
-	    		  System.out.println("Thread" + letters.charAt(i));
-	    		  try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-	    	  }
+	   
 	    	  
 	      }
+
+		public Object getThreads() {
+			
+			Thread tab [] = new Thread [letters.length()];
+			
+			for (int i = 0; i < letters.length(); i++){
+	    		  tab[i] = "Thread" + letters.charAt(i);
+	    		 
+	    	  }
+			
+			return tab;
+		}
 	    
 	  
 	    
@@ -28,3 +32,4 @@ public class Letters implements Runnable {
 	
 	
 }
+

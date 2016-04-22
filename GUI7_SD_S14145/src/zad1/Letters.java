@@ -4,10 +4,12 @@ public class Letters implements Runnable {
 
 	private String letters;
 	private char tab[];
-	private Thread  thr_list [];
+	private Thread thr_list [];
 	
 	public Letters (String letters){
 		this.letters = letters; 
+		Thread thr_list [] = new Thread [letters.length()];
+		char tab[] = new char [letters.length()];
 		for (int i = 0; i < letters.length(); i++){
   		  tab[i] = letters.charAt(i);
   		  thr_list[i].setName("Thread " + tab[i]);

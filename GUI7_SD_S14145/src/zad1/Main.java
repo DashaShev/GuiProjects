@@ -13,7 +13,10 @@ public class Main {
     Letters letters = new Letters("ABCD");
     for (Thread t : letters.getThreads()) System.out.println(t.getName());
     
-    for (Thread t : letters.getThreads()) t.start();
+    for (Thread t : letters.getThreads()) {
+    	t.start();
+    	System.out.println(t.getName()); 
+    }
 
     Thread.sleep(5000);
 

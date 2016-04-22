@@ -10,7 +10,7 @@ public class Letters implements Runnable {
 		this.letters = letters; 
 		for (int i = 0; i < letters.length(); i++){
   		  tab[i] = letters.charAt(i);
-  		  thr_list[i] = new Thread().setName("Thread " + tab[i]);
+  		  thr_list[i].setName("Thread " + tab[i]);
   	}
 		
 	}

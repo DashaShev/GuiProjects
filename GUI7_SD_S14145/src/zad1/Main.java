@@ -21,9 +21,11 @@ public class Main {
 
     for (Thread t : letters.getThreads()) {
     	t.join();
+    	t.interrupt();
     }
     
     System.out.println("\nProgram skoЕ„czyЕ‚ dziaЕ‚anie");
   }
 
 }
+

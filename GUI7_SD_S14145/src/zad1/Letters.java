@@ -19,17 +19,11 @@ public class Letters implements Runnable {
 			Thread tab [] = new Thread [letters.length()];
 			
 			for (int i = 0; i < letters.length(); i++){
-	    		  tab[i] = "Thread" + letters.charAt(i);
+	    		  tab[i].setName("Thread" + letters.charAt(i));
 	    		 
 	    	  }
 			
 			return tab;
 		}
-	    
-	  
-	    
-	    
-	
-	
-}
 
+}

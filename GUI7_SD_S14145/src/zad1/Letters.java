@@ -20,11 +20,11 @@ public class Letters implements Runnable {
                 	String threadName =
                             Thread.currentThread().getName().substring(7);
                   System.out.print(threadName);
-                  System.out.flush();
+                  //System.out.flush();
                   try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					return;
 				}
                 }
               }

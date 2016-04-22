@@ -15,7 +15,6 @@ public class Main {
     
     for (Thread t : letters.getThreads()) {
     	t.start();
-    	t.run();
     }
 
     Thread.sleep(5000);

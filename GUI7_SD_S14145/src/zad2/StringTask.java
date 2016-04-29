@@ -11,8 +11,6 @@ public class StringTask implements Runnable{
     }
 	
 	public StringTask(String letter, int count){
-		this.letter = letter;
-		this.count = count; 
 		
 		Runnable r1 = new Runnable() {
             private String res;

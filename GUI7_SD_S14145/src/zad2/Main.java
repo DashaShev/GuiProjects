@@ -16,7 +16,7 @@ public class Main {
     	StringTask my_task = new StringTask("A", 70000);
         Thread my_thr = new Thread(my_task);
          my_thr.start();
-         // засыпаем на 1 секунду и тормозим нить
+         Thread.sleep(1000);
          my_thr.interrupt();
     }
     while (!task.isDone()) {

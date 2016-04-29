@@ -5,7 +5,7 @@ package zad2;
 public class StringTask implements Runnable{
 	private String letter;
 	private int count;
-	
+	 private String res;
 	private TaskState task_state; 
 	
 	public StringTask(TaskState task_state) {
@@ -15,23 +15,18 @@ public class StringTask implements Runnable{
 	public StringTask(String letter, int count){
 		
 		Runnable r1 = new Runnable() {
-            private String res;
+           
 			private int cnt;
 
 			@Override
             public void run() {
 				while (task_state != TaskState.ABORTED && this.cnt < count) {
-					 	this.res = this.res + letter;
+					 	res = res + letter;
 					    this.cnt += 1;
 					    task_state = TaskState.READY;
 				}
-                try {
-					Thread.sleep(1000);
-					task_state = TaskState.ABORTED;
-				} catch (InterruptedException e) {
-					return;
-				}
-                }
+				
+            }
             	
             	
            
@@ -41,30 +36,26 @@ public class StringTask implements Runnable{
 
 	public String getResult() {
 		
-		return null;
+		return res;
 	}
 
 	public TaskState getState() {
 		
 		switch (task_state) {
         case CREATED:
-            System.out.println("CREATED");
-            break;
+            return task_state;
                 
         case RUNNING:
-            System.out.println("RUNNING");
-            break;
+        	 return task_state;
                      
         case ABORTED:
-            System.out.println("ABORTED");
-            break;
+        	 return task_state;
                     
         case READY:
-            System.out.println("READY");
-            break;
+        	 return task_state;
     }
-		
 		return null;
+		
 	}
 
 	public void start() {

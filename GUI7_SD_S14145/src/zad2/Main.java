@@ -13,9 +13,11 @@ public class Main {
     System.out.println("Task " + task.getState());
     task.start();
     if (args.length > 0 && args[0].equals("abort")) { 
-    /*<- tu zapisaÄ‡ kod  przerywajÄ…cy dziaÅ‚anie tasku po sekundzie 
-         i uruchomiÄ‡ go w odrÄ™bnym wÄ…tku
-    */
+    	StringTask my_task = new StringTask("A", 70000);
+        Thread my_thr = new Thread(my_task);
+         my_thr.start();
+         // çàñûïàåì íà 1 ñåêóíäó è òîðìîçèì íèòü
+         my_thr.interrupt();
     }
     while (!task.isDone()) {
       Thread.sleep(500);

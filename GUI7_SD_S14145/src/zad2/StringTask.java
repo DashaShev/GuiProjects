@@ -1,9 +1,11 @@
 package zad2;
 
+
+
 public class StringTask implements Runnable{
 	private String letter;
 	private int count;
-	public enum TaskState { CREATED, RUNNING, ABORTED, READY };
+	
 	private TaskState task_state; 
 	
 	public StringTask(TaskState task_state) {
@@ -72,12 +74,13 @@ public class StringTask implements Runnable{
 	
 	public void abort() {
 		
+		task_state = TaskState.ABORTED;
 		
 	}
 
 	public boolean isDone() {
 		
-		return false;
+		return  task_state == TaskState.READY;
 	}
 
 	@Override

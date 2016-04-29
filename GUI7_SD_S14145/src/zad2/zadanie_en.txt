@@ -1,0 +1,73 @@
+Starting and stopping a parallel action codes.
+
+Build StringTask class,  simulating long-term calculations, here involving concatenation of "subtitles"(?)
+The class constructor receives as argument the string to duplicate, and the
+number indicating how many times the string is to be amplified.
+
+Class must implement the interface Runnable, and its method run () is executed
+duplicate string, with this duplication is to take place using the '+' used to
+string variables (it is long-term operation). Using the '+' is a condition
+mandatory.
+
+Obiekt klasy StringTask traktujemy jako zadanie, które może się wykonywać równolegle z innymi.
+
+The object of the StringTask class treated as a task that can be performed in parallel with each other.
+Possible states of the task are:
+
+CREATED  - job created, but not yet started to do
+RUNNING - the task is performed in a separate thread
+ABORTED - the task has been interrupted
+READY - the task is successful and the results are ready.
+
+Define following methods in the StringTask class:
+
+  public String getResult()  - returns the result of a concatenation
+  public TaskState getState()  - returns the job status
+  public void start() - actuating task in a separate thread
+  public void abort() - Interrupt code execution tasks and operation thread
+  public boolean isDone()  - returns true if the task is completed normally or by interruption, false otherwise
+
+The code of program is following:
+
+public class Main {
+
+  public static void main(String[] args) throws InterruptedException {
+    StringTask task = new StringTask("A", 70000);
+    System.out.println("Task " + task.getState());
+    task.start();
+    if (args.length > 0 && args[0].equals("abort")) { 
+    /*<- Type in the code interrupting the StringTask each second
+         and run it in a separate thread
+    */
+    }
+    while (!task.isDone()) {
+      Thread.sleep(500);
+      switch(task.getState()) {
+        case RUNNING: System.out.print("R."); break;
+        case ABORTED: System.out.println(" ... aborted."); break;
+        case READY: System.out.println(" ... ready."); break;
+        default: System.out.println("uknown state");
+      }
+      
+    }
+    System.out.println("Task " + task.getState());
+    System.out.println(task.getResult().length());
+  }
+}
+
+Running a program without argument should enter something like:
+
+Task CREATED
+R.R.R.R.R.R.R.R.R. ... ready.
+Task READY
+70000
+
+a running argument "abort" can deduce:
+Task CREATED
+R. ... aborted.
+Task ABORTED
+31700
+
+Note 1. Main.java file can be modified only in the place marked  /*<- */
+Note 2. Do not use the method System.exit (...)
+

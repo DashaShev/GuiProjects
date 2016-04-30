@@ -14,17 +14,25 @@ public class Main {
     task.start();
     if (args.length > 0 && args[0].equals("abort")) { 
     	Runnable r1 = () -> {
-      	  try {
-      		  while( !task.isDone() ) {
-				Thread.sleep(995);
-    	        task.abort();
-				Thread.sleep(5);
-    	        task.start();
-      		  }
-			} catch (InterruptedException e) {			
+//      	  try {
+//      		  while( !task.isDone() ) {
+//				Thread.sleep(995);
+//    	        task.abort();
+//				Thread.sleep(5);
+//    	        task.start();
+//      		  }
+//			} catch (InterruptedException e) {			
+//				e.printStackTrace();
+//			}
+//      	  	task.abort();
+    		
+    		try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-      	  	task.abort();
+    		task.abort(); 
     	};
     	Thread thr = new Thread(r1);
     	thr.start(); 

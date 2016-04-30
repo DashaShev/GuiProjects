@@ -13,8 +13,23 @@ public class Main {
     System.out.println("Task " + task.getState());
     task.start();
     if (args.length > 0 && args[0].equals("abort")) { 
-         Thread.sleep(500);
-         task.abort();
+    	Runnable r1 = new Runnable() {
+    	     @Override
+    	     public void run() {
+    	          while( !task.isDone() ) {
+    	        	  task.abort();
+    	        	  task.start();
+    	        	  try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						
+						e.printStackTrace();
+					}
+    	           }
+    	     }
+    	};
+    	Thread thr = new Thread(r1);
+    	thr.start(); 
     }
     while (!task.isDone()) {
       Thread.sleep(500);

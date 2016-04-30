@@ -16,10 +16,10 @@ public class Main {
     	Runnable r1 = () -> {
       	  try {
       		  while( !task.isDone() ) {
+				Thread.sleep(995);
     	        task.abort();
-				Thread.sleep(300);
+				Thread.sleep(5);
     	        task.start();
-				Thread.sleep(7000);
       			}
 			} catch (InterruptedException e) {			
 				e.printStackTrace();

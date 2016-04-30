@@ -20,10 +20,11 @@ public class Main {
     	        task.abort();
 				Thread.sleep(5);
     	        task.start();
-      			}
+      		  }
 			} catch (InterruptedException e) {			
 				e.printStackTrace();
 			}
+      	  	task.abort();
     	};
     	Thread thr = new Thread(r1);
     	thr.start(); 

@@ -24,10 +24,10 @@ public class StringTask implements Runnable {
 		 	res = res + letter;
 		    this.cnt += 1;
 		}
-	    task_state = TaskState.READY;
-
+		if (this.cnt == this.iter_num) {
+			task_state = TaskState.READY;
+		}
     }
-
 
 	public String getResult() {
 		return res;
@@ -46,16 +46,15 @@ public class StringTask implements Runnable {
 		task_state = TaskState.ABORTED;
 		my_thr.interrupt();
 		try {
-			my_thr.join();
-			
+			my_thr.join();	
 		} catch (InterruptedException e) {
-			
 			e.printStackTrace();
 		}
 	}
 
 	public boolean isDone() {
-		  return  task_state == TaskState.READY || task_state == TaskState.ABORTED;
-		 }
+		// return task_state == TaskState.READY || task_state == TaskState.ABORTED;
+		return task_state == TaskState.READY;
+	}
 
 }

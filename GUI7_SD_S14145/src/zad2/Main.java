@@ -13,11 +13,8 @@ public class Main {
     System.out.println("Task " + task.getState());
     task.start();
     if (args.length > 0 && args[0].equals("abort")) { 
-    	StringTask my_task = new StringTask("A", 70000);
-        Thread my_thr = new Thread(my_task);
-         my_thr.start();
-         Thread.sleep(1000);
-         my_thr.interrupt();
+         Thread.sleep(500);
+         task.abort();
     }
     while (!task.isDone()) {
       Thread.sleep(500);
@@ -27,7 +24,6 @@ public class Main {
         case READY: System.out.println(" ... ready."); break;
         default: System.out.println("unknown state");
       }
-
     }
     System.out.println("Task " + task.getState());
     System.out.println(task.getResult().length());

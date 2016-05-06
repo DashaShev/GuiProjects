@@ -53,8 +53,8 @@ public class StringTask implements Runnable {
 	}
 
 	public boolean isDone() {
-		// return task_state == TaskState.READY || task_state == TaskState.ABORTED;
-		return task_state == TaskState.READY;
+		return task_state == TaskState.READY || task_state == TaskState.ABORTED;
+		// return task_state == TaskState.READY;
 	}
 
 }

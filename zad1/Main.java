@@ -18,9 +18,10 @@ public class Main extends JFrame {
 		
 		int ch = (int)this.getContentPane().getSize().getHeight();
 		int delta = 500 - ch;
-	    g.setColor (Color.blue); 
+	   g.setColor (Color.blue); 
 	    g.drawLine (0,delta,500,500);
 	    g.drawLine (0,500,500,delta);
+	    this.getContentPane().setBackground(Color.cyan);
 	  }
 	
 	

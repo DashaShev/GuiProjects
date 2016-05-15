@@ -16,8 +16,8 @@ public class Main extends JFrame {
 	
 	public void paint(Graphics g) {
 	    g.setColor (Color.blue); 
-	    g.drawLine (-33,0,500,500);
-	    g.drawLine (0,500,533,0);
+	    g.drawLine (0,0,500,500);
+	    g.drawLine (0,500,500,0);
 	  }
 	
 	

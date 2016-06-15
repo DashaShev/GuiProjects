@@ -15,11 +15,22 @@ import javax.swing.*;
 public class Main extends JFrame { 
 	
 	public void paint(Graphics g) {
-		int ch = (int)this.getContentPane().getSize().getHeight();
-		int delta = 500 - ch;
 	    g.setColor (Color.blue); 
-	    g.drawLine (0,delta,500,500);
-	    g.drawLine (0,500,500,delta);
+        Dimension d = this.getContentPane().getSize();
+        System.out.println("d is " + d);
+        if (false) {
+            int h = (int)d.getHeight();
+            int w = (int)d.getWidth();
+            int delta = 500 - h;
+	        g.drawLine (0,delta,500,500);
+	        g.drawLine (0,500,500,delta);
+        }
+        else {
+            Rectangle r = this.getContentPane().getBounds();
+            System.out.println("r is " + r);
+            g.drawLine (r.x, r.y, r.width, r.height);
+            g.drawLine (r.x, r.height, r.width, r.y);
+        }
 	  }
 	
 	public Main()

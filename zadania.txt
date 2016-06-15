@@ -2,11 +2,17 @@
 
 Stworzyć JListę, pokazująca informacje o temperaaturze w postaci: 
 
+// Create JList, showing information in the form of temperature:
+
 k stopni C = f stopni F 
+// k degree C = f degree F
 
 gdzie k zmienia się od -70 do +60. 
+// where k varies from -70 to +60.
 
 Uwaga: nie wolno używać tablic ani kolekcji (w tym DefaultListModel, który pod spodem kporzysta z klasy Vector). 
+
+// Warning: Do not use arrays or collections (including DefaultListModel, that underneath uses the Vector class
 
 2.
 
